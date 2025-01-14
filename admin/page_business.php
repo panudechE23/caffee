@@ -1,11 +1,5 @@
 <?php include 'head.php'; ?>
-<?php
 
-// ดึงข้อมูลจากฐานข้อมูล
-$query = "SELECT * FROM business";
-$stmt = $pdo->query($query); // ใช้ตัวแปร $query ที่กำหนดไว้ด้านบน
-$businesss = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูลทั้งหมดในรูปแบบ array
-?>
 
 <body id="page-top">
 
@@ -68,26 +62,14 @@ $businesss = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมู�
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    <?php foreach ($businesss as $index => $business): ?>
-                                        <tr>
-                                            <td><?= $index + 1; ?></td>
-                                            <td>
-                                                <img src="../img/business/<?= htmlspecialchars($business['img_business']); ?>" alt="Image" width="100">
-                                            </td>
-                                            <td><?= htmlspecialchars($business['name_th_business']); ?></td>
-                                            <td><?= $business['detail_th_business']; ?></td>
-                                            <td><?= htmlspecialchars($business['name_en_business']); ?></td>
-                                            <td><?= $business['detail_en_business']; ?></td>
-                                            <td>
-                                                <a href="edit/edit_list_business.php?id=<?= $business['id_business']; ?>" class="btn btn-warning btn-sm">
-                                                    <i class="fas fa-edit"></i>
-                                                </a>
-                                                <a href="delete/delete_business.php?id=<?= $business['id_business']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('คุณแน่ใจหรือว่าต้องการลบรายการนี้?');">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    <?php endforeach; ?>
+                                   <td>1</td>
+                                   <td>1</td>
+                                   <td>1</td>
+                                   <td>1</td>
+                                   <td>1</td>
+                                   <td>1</td>
+                                   <td>1</td>
+                                   <td>1</td>
                                 </tbody>
                             </table>
                             </div>

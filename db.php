@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';  // หรือ IP ของเซิร์ฟเวอร์ฐานข้อมูล
-$dbname = 'caffee';  // ชื่อฐานข้อมูล
+$dbname = 'coffee';  // ชื่อฐานข้อมูล
 $username = 'root';  // ชื่อผู้ใช้ฐานข้อมูล
 $password = '';  // รหัสผ่านฐานข้อมูล
 

@@ -2,15 +2,11 @@
 <?php
 
 // ดึงข้อมูลจากฐานข้อมูล
-$stmt = $pdo->prepare("SELECT * FROM about WHERE id_about = 1");
+$stmt = $pdo->prepare("SELECT * FROM satisfaction WHERE id_satisfaction = 1");
 $stmt->execute();
-$about = $stmt->fetch(PDO::FETCH_ASSOC); // ดึงข้อมูลแถวเดียว
+$satisfaction = $stmt->fetch(PDO::FETCH_ASSOC); // ดึงข้อมูลแถวเดียว
 
-if (!$about) {
-    $_SESSION['error'] = 'ไม่พบข้อมูลในฐานข้อมูล';
-    header('Location: ../admin_hero.php');
-    exit();
-}
+
 ?>
 
 <body id="page-top">
@@ -43,39 +39,43 @@ if (!$about) {
                     <!-- Upload Form -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">เพิ่มข้อมูล banner หน้าหลัก</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">แก้ไขข้อมูล ความพึงพอใจ</h6>
                         </div>
                         <div class="card-body">
-                            <form method="POST" enctype="multipart/form-data" action="edit/edit_about.php">
-                            <input type="hidden" name="id_about" value="<?php echo $about['id_about']; ?>">
+                            <form method="POST" enctype="multipart/form-data" action="edit/edit_satisfaction.php">
+                                <input type="hidden" name="id_satisfaction" value="<?php echo $satisfaction['id_satisfaction']; ?>">
+                                <div class="row">
+                                <div class="col form-group">
+                                        <label for="method_satisfaction">วิธีเตรียมและบริโภค</label>
+                                        <input type="text" class="form-control" id="method_satisfaction" name="method_satisfaction" value="<?= $satisfaction['method_satisfaction'] ?>" placeholder="ชื่อ th">
+                                    </div>
+                                    <div class="col form-group">
+                                        <label for="maintenance_satisfaction">วิธีการเก็บรักษา</label>
+                                        <input type="text" class="form-control" id="maintenance_satisfaction" name="maintenance_satisfaction" value="<?= $satisfaction['maintenance_satisfaction'] ?>" placeholder="ชื่อ th">
+                                    </div>
+                                    <div class="col form-group">
+                                        <label for="caution_satisfaction">ข้อควรระวัง</label>
+                                        <input type="text" class="form-control" id="caution_satisfaction" name="caution_satisfaction" value="<?= $satisfaction['caution_satisfaction'] ?>" placeholder="ชื่อ th">
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="col form-group">
-                                        <label for="image">Upload รูป1</label>
-                                        <input type="file" class="form-control" id="image1" name="image1" accept="image/*">
-                                        <img src="../img/about/<?= $about['img1_about'] ?>" width="100" class="mt-2">
+                                        <label for="img1_satisfaction">Upload รูป1</label>
+                                        <input type="file" class="form-control" id="img1_satisfaction" name="img1_satisfaction" accept="image/*">
+                                        <img src="../img/satisfaction/<?= $satisfaction['img1_satisfaction'] ?>" width="100" class="mt-2">
                                     </div>
                                     <div class="col form-group">
-                                        <label for="image">Upload รูป2</label>
-                                        <input type="file" class="form-control" id="image2" name="image2" accept="image/*">
-                                        <img src="../img/about/<?= $about['img2_about'] ?>" width="100" class="mt-2">
-                                    </div>
-                                   
-                                   
-                                        <div class="form-group">
-                                            <label for="name_about">ชื่อ ไทย</label>
-                                            <input type="text" class="form-control" id="name_about" name="name_about" value="<?= $about['name_about'] ?>" placeholder="ชื่อ th">
-                                        </div>
-                                        <div class="col form-group">
-                                        <label for="detail_about">รายละเอียด ไทย</label>
-                                        <textarea class="form-control" name="detail_about" id="detail" rows="5" ><?= $about['detail_about']?></textarea>
-                                    </div>
+                                        <label for="img2_satisfaction">Upload รูป2</label>
+                                        <input type="file" class="form-control" id="img2_satisfaction" name="img2_satisfaction" accept="image/*">
+                                        <img src="../img/satisfaction/<?= $satisfaction['img2_satisfaction'] ?>" width="100" class="mt-2">
+                                    </div>                                  
                                 </div>
                                 <button type="submit" class="btn btn-primary">Upload</button>
                             </form>
                         </div>
                     </div>
                 </div>
-                <!-- <?php include '../tableabout.php'; ?> -->
+                <!-- <?php include '../tablesatisfaction.php'; ?> -->
                 <?php include 'footer.php'; ?>
             </div>
         </div>
@@ -131,20 +131,21 @@ if (!$about) {
 
 <script>
     $(document).ready(function() {
-      $('.select2-single').select2();
+        $('.select2-single').select2();
 
-      // Date Picker Initialization
-      $('#start_date_history').datepicker({
-        format: 'dd/mm/yyyy',
-        autoclose: true,
-        todayHighlight: true
-      });
+        // Date Picker Initialization
+        $('#start_date_history').datepicker({
+            format: 'dd/mm/yyyy',
+            autoclose: true,
+            todayHighlight: true
+        });
 
-      $('#end_date_history').datepicker({
-        format: 'dd/mm/yyyy',
-        autoclose: true,
-        todayHighlight: true
-      });
+        $('#end_date_history').datepicker({
+            format: 'dd/mm/yyyy',
+            autoclose: true,
+            todayHighlight: true
+        });
     });
-  </script>
+</script>
+
 </html>
