@@ -58,10 +58,11 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูล�
                                                 <label for="position_review">ตำแหน่ง</label>
                                                 <input type="text" class="form-control" id="position_review" name="position_review" required="ใส่ตำแหน่ง">
                                             </div>
-                                            <div class="col form-group">
+                                           
+                                            </div>
+                                            <div class="form-group">
                                                 <label for="review">รีวิว</label>
                                                 <input type="text" class="form-control" id="review" name="review" required="ใส่รีวิว">
-                                            </div>
                                             </div>
                                             <button type="submit" class="btn btn-primary mt-3">บันทึก</button>
                                         </form>
