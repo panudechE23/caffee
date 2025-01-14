@@ -48,17 +48,20 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูล�
                                                 <label for="vdo">Upload img</label>
                                                 <input type="file" class="form-control" id="img_review" name="img_review" accept="image/*" required="ใส่รูปภาพ">
                                             </div>
-                                            <div class="form-group">
+                                            <div class="row">
+                                            <div class="col form-group">
                                                 <label for="name_review">name</label>
-                                                <input type="text" class="form-control" id="name_review" name="name_review" placeholder="ชื่อ th" required="ใส่ชื่อ">
+                                                <input type="text" class="form-control" id="name_review" name="name_review" required="ใส่ชื่อ">
                                             </div>
+                                            
                                             <div class="col form-group">
                                                 <label for="position_review">ตำแหน่ง</label>
-                                                <input type="text" class="form-control" id="position_review" name="position_review" placeholder="ชื่อ th" required="ใส่ตำแหน่ง">
+                                                <input type="text" class="form-control" id="position_review" name="position_review" required="ใส่ตำแหน่ง">
                                             </div>
                                             <div class="col form-group">
                                                 <label for="review">รีวิว</label>
-                                                <input type="text" class="form-control" id="review" name="review" placeholder="ชื่อ th" required="ใส่รีวิว">
+                                                <input type="text" class="form-control" id="review" name="review" required="ใส่รีวิว">
+                                            </div>
                                             </div>
                                             <button type="submit" class="btn btn-primary mt-3">บันทึก</button>
                                         </form>
