@@ -30,3 +30,9 @@ require "../db.php";
     <link href="vendor/clock-picker/clockpicker.css" rel="stylesheet">
     <link href="css/ruang-admin.min.css" rel="stylesheet">
 </head>
+<style>
+    .ระยะหาง {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>

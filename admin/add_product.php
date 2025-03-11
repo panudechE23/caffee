@@ -37,12 +37,7 @@ $stmtingredients->execute();
 $ingredientss = $stmtingredients->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
-<style>
-    .ระยะหาง {
-        display: flex;
-        justify-content: space-between;
-    }
-</style>
+
 
 <body id="page-top">
     <div id="wrapper">
