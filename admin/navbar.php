@@ -66,6 +66,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <li class="nav-item <?= $current_page == 'page_contact.php' ? 'active' : '' ?>">
     <a class="nav-link" href="page_contact.php">                                                        
         <i class="fa fa-envelope"></i>
+        <i class="fa fa-envelope"></i>
         <span>ติดต่อเรา</span></a>
 </li>
 <li class="nav-item <?= $current_page == 'logout.php' ? 'active' : '' ?>">
