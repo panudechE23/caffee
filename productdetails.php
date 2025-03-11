@@ -70,7 +70,7 @@
             <div class="row g-4">
                 <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item text-center rounded overflow-hidden">
-                        <img class="img-fluid" src="img/logo/11.png" alt="">
+                        <img class="img-fluid" src="img/logo/11.png" alt="" style="max-width: 50%;height: 50%;">
                         <div>
                             <div>
                                 <h5>ผงถั่วขาวสกัด </h5>
@@ -85,7 +85,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item text-center rounded overflow-hidden">
-                        <img class="img-fluid" src="img/logo/12.png" alt="">
+                        <img class="img-fluid" src="img/logo/12.png" alt="" style="max-width: 50%;height: 50%;">
                         <div>
                             <div>
                                 <h5>คอลลาเจน</h5>

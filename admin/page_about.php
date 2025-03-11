@@ -24,7 +24,7 @@ if (!$about) {
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <h1 class="h3 mb-4 text-gray-800">banner หน้าหลัก</h1>
+                    <h1 class="h3 mb-4 text-gray-800">เกี่ยวกับเรา</h1>
                     <!-- Show error or success messages -->
                     <?php if (isset($_SESSION['error'])): ?>
                         <div class="alert alert-danger">
@@ -43,11 +43,11 @@ if (!$about) {
                     <!-- Upload Form -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">เพิ่มข้อมูล banner หน้าหลัก</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">เกี่ยวกับเรา</h6>
                         </div>
                         <div class="card-body">
-                            <form method="POST" enctype="multipart/form-data" action="edit/edit_about.php">
-                            <input type="hidden" name="id_about" value="<?php echo $about['id_about']; ?>">
+                            <form method="POST" enctype="multipart/form-data" action="edit_save/edit_about.php">
+                                <input type="hidden" name="id_about" value="<?php echo $about['id_about']; ?>">
                                 <div class="row">
                                     <div class="col form-group">
                                         <label for="image">Upload รูป1</label>
@@ -59,15 +59,15 @@ if (!$about) {
                                         <input type="file" class="form-control" id="image2" name="image2" accept="image/*">
                                         <img src="../img/about/<?= $about['img2_about'] ?>" width="100" class="mt-2">
                                     </div>
-                                   
-                                   
-                                        <div class="form-group">
-                                            <label for="name_about">ชื่อ ไทย</label>
-                                            <input type="text" class="form-control" id="name_about" name="name_about" value="<?= $about['name_about'] ?>" placeholder="ชื่อ th">
-                                        </div>
-                                        <div class="col form-group">
+
+
+                                    <div class="form-group">
+                                        <label for="name_about">ชื่อ ไทย</label>
+                                        <input type="text" class="form-control" id="name_about" name="name_about" value="<?= $about['name_about'] ?>" placeholder="ชื่อ th">
+                                    </div>
+                                    <div class="col form-group">
                                         <label for="detail_about">รายละเอียด ไทย</label>
-                                        <textarea class="form-control" name="detail_about" id="detail" rows="5" ><?= $about['detail_about']?></textarea>
+                                        <textarea class="form-control" name="detail_about" id="detail" rows="5"><?= $about['detail_about'] ?></textarea>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Upload</button>
@@ -131,20 +131,21 @@ if (!$about) {
 
 <script>
     $(document).ready(function() {
-      $('.select2-single').select2();
+        $('.select2-single').select2();
 
-      // Date Picker Initialization
-      $('#start_date_history').datepicker({
-        format: 'dd/mm/yyyy',
-        autoclose: true,
-        todayHighlight: true
-      });
+        // Date Picker Initialization
+        $('#start_date_history').datepicker({
+            format: 'dd/mm/yyyy',
+            autoclose: true,
+            todayHighlight: true
+        });
 
-      $('#end_date_history').datepicker({
-        format: 'dd/mm/yyyy',
-        autoclose: true,
-        todayHighlight: true
-      });
+        $('#end_date_history').datepicker({
+            format: 'dd/mm/yyyy',
+            autoclose: true,
+            todayHighlight: true
+        });
     });
-  </script>
+</script>
+
 </html>

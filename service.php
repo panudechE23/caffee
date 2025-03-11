@@ -8,7 +8,7 @@
                     <p class="mb-5">คืนสินค้าภายในเงื่อนไขที่บริษัทกำหนด
                     </p>
                     <div class="row gy-5 gx-4">
-                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                        <!-- <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
                             <div class="d-flex align-items-center mb-3">
                                 <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
                                     <i class="fa fa-coffee text-white"></i>
@@ -17,7 +17,7 @@
                             </div>
                             <span>รับประทานวันละ 1 ซอง (30 กรัม) ต่อน้ำร้อน/น้ำอุณภูมิห้อง 1 ถ้วย (150 มิลลิลิตร)
                                 คนให้เข้ากัน หรือเขย่าให้เข้ากัน</span>
-                        </div>
+                        </div> -->
                         <div class="col-sm-6 wow fadeIn" data-wow-delay="0.2s">
                             <div class="d-flex align-items-center mb-3">
                                 <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">

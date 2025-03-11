@@ -1,7 +1,7 @@
  <!-- Product Start -->
  <div class="container-xxl bg-light my-6 py-6 pt-0" id="Product">
         <div class="container">
-            <div class="bg-primary text-light rounded-bottom p-5 my-6 mt-0 wow fadeInUp" data-wow-delay="0.1s">
+            <!-- <div class="bg-primary text-light rounded-bottom p-5 my-6 mt-0 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-6">
                         <h1 class="display-4 text-light mb-0">Happy Coffee</h1>
@@ -16,7 +16,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                 <p class="text-primary text-uppercase mb-2">ผลิตภัณฑ์</p>
                 <h1 class="display-6 mb-4">Happy Coffee</h1>
@@ -33,7 +33,7 @@
                                 อีกทั้งมีใยอาหารสูง ถั่วขาวนั้นยังประกอบไปด้วยสาร "ฟาซิโอลามีน" ❜</span>
                         </div>
                         <div class="position-relative mt-auto">
-                            <img class="img-fluid" src="img/MPM500400/1.png" alt="">
+                            <img class="img-fluid" src="img/MPM500400/2.png" alt="">
                             <div class="product-overlay">
                                 <a class="btn btn-lg-square btn-outline-light rounded-circle" href="productdetails.php"><i
                                         class="fa fa-eye text-primary"></i></a>
@@ -53,7 +53,7 @@
                                 อีกทั้งมีใยอาหารสูง ถั่วขาวนั้นยังประกอบไปด้วยสาร "ฟาซิโอลามีน" ❜</span>
                         </div>
                         <div class="position-relative mt-auto">
-                            <img class="img-fluid" src="img/MPM500400/2.png" alt="">
+                            <img class="img-fluid" src="img/MPM500400/1.png" alt="">
                             <div class="product-overlay">
                                 <a class="btn btn-lg-square btn-outline-light rounded-circle" href="productdetails.php"><i
                                         class="fa fa-eye text-primary"></i></a>

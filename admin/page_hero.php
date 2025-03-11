@@ -68,7 +68,7 @@ $heros = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูลท
                                                                     <td><?= $index + 1; ?></td>
                                                                     <td>
                                                                         <video width="200" controls>
-                                                                            <source src="../vdo/<?= htmlspecialchars($hero['vdo_hero']); ?>" type="video/mp4">
+                                                                            <source src="../vdo/<?= ($hero['vdo_hero']); ?>" type="video/mp4">
                                                                             Your browser does not support the video tag.
                                                                         </video>
                                                                     </td>

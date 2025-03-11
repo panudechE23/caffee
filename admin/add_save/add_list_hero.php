@@ -20,6 +20,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }
 
+        // ตรวจสอบขนาดไฟล์ (เช่น ไม่เกิน 100MB)
+        if ($fileSize > 100 * 1024 * 1024) {
+            $_SESSION['error'] = 'ขนาดไฟล์เกิน 100MB';
+            header('Location: ../page_hero.php');
+            exit();
+        }
+
         // ตั้งชื่อไฟล์ใหม่เพื่อป้องกันชื่อซ้ำ
         $newFileName = uniqid('vdo_', true) . '.' . $fileExtension;
 

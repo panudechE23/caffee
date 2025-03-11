@@ -1,8 +1,8 @@
 
  <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                    <div class="text-center my-auto">
+                        <span>Happy coffee &copy; Your Website 2025</span>
                     </div>
                 </div>
             </footer>

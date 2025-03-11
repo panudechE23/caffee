@@ -1,5 +1,5 @@
  <!-- Navbar Start -->
- <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+ <nav id="navbar"  class="navbar navbar-expand-lg navbar-dark fixed-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
         <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
             <h1 class="text-primary m-0">HAPPY COFFEE</h1>
         </a>
@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </div>
-            <div class=" d-none d-lg-flex">
+            <!-- <div class=" d-none d-lg-flex">
                 <div class="flex-shrink-0 btn-lg-square border border-light rounded-circle">
                     <i class="fa fa-phone text-primary"></i>
                 </div>
@@ -28,7 +28,7 @@
                     <small class="text-primary mb-0">โทรหาเรา</small>
                     <p class="text-light fs-5 mb-0">02-642-5425</p>
                 </div>
-            </div>
+            </div> -->
         </div>
     </nav>
     <!-- Navbar End -->

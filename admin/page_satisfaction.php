@@ -42,7 +42,7 @@ $satisfaction = $stmt->fetch(PDO::FETCH_ASSOC); // ดึงข้อมูล�
                             <h6 class="m-0 font-weight-bold text-primary">แก้ไขข้อมูล ความพึงพอใจ</h6>
                         </div>
                         <div class="card-body">
-                            <form method="POST" enctype="multipart/form-data" action="edit/edit_satisfaction.php">
+                            <form method="POST" enctype="multipart/form-data" action="edit_save/edit_satisfaction.php">
                                 <input type="hidden" name="id_satisfaction" value="<?php echo $satisfaction['id_satisfaction']; ?>">
                                 <div class="row">
                                 <div class="col form-group">
