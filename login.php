@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($user && strcmp($input_username, $user['username']) == 0 && $input_password == $user['password']) {
     $_SESSION['loggedin'] = true;
     $_SESSION['username'] = $input_username;
-    header("Location: admin/table_businessplan.php");
+    header("Location: admin/table_hero.php");
     exit;
 } else {
     $error = "username หรือ password ผิด";

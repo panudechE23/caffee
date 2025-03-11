@@ -46,7 +46,7 @@ if (!$about) {
                             <h6 class="m-0 font-weight-bold text-primary">เพิ่มข้อมูล banner หน้าหลัก</h6>
                         </div>
                         <div class="card-body">
-                            <form method="POST" enctype="multipart/form-data" action="edit/edit_about.php">
+                            <form method="POST" enctype="multipart/form-data" action="edit_save/edit_about.php">
                             <input type="hidden" name="id_about" value="<?php echo $about['id_about']; ?>">
                                 <div class="row">
                                     <div class="col form-group">
