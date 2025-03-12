@@ -12,7 +12,9 @@ if (!$about) {
     exit();
 }
 ?>
+<style>
 
+</style>
 <body id="page-top">
 
     <div id="wrapper">
@@ -41,6 +43,17 @@ if (!$about) {
                     <?php endif; ?>
 
                     <!-- Upload Form -->
+
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">เกี่ยวกับเรา</h6>
+                        </div>
+                        <div class="card-body">
+                            <?php require 'preview/about.php'; ?>
+                        </div>
+                    </div>
+
+
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">เกี่ยวกับเรา</h6>

@@ -14,10 +14,12 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <style>
     .fadeIn {
-    background-color:#1E1916 !important;
-}.text-light{
-    /* color: #000 !important; */
-}
+        background-color: #1E1916 !important;
+    }
+
+    .text-light {
+        /* color: #000 !important; */
+    }
 </style>
 
 <body id="page-top">

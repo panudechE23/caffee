@@ -10,7 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $line_contact = $_POST['line_contact'];
     $facebook_contact = $_POST['facebook_contact'];
     $youtube_contact = $_POST['youtube_contact'];
-
     try {
         // อัปเดตข้อมูลในฐานข้อมูล
         $sql = "UPDATE contact SET 

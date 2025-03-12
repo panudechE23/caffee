@@ -40,6 +40,19 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูล�
                                 <h6 class="m-0 font-weight-bold text-primary">รายการ ภาพโมเมนต์พิเศษ</h6>
                             </div>
                             <div class="card-body">
+                        <?php require 'preview/review.php'; ?>
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <!-- Page Heading -->
+                        <h1 class="h3 mb-2 text-gray-800">ภาพโมเมนต์พิเศษ</h1>
+                        <!-- DataTales Example -->
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">รายการ ภาพโมเมนต์พิเศษ</h6>
+                            </div>
+                            <div class="card-body">
                                 <div class="table-responsive">
                                     <div class="card-body">
                                         <h6 class="card-title">เพิ่ม รูปภาพ</h6>
