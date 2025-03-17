@@ -12,7 +12,6 @@ $pageingredientsStmt = $pdo->prepare($pageingredientsSql);
 $pageingredientsStmt->execute();
 $selectedingredientss = $pageingredientsStmt->fetchAll(PDO::FETCH_COLUMN);
 
-
 ?>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.1.0/dist/css/multi-select-tag.css">
