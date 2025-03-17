@@ -39,6 +39,19 @@ $heros = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูลท
                             <div class="card-header py-3">
                                 <h6 class="m-0 font-weight-bold text-primary">รายการ ภาพโมเมนต์พิเศษ</h6>
                             </div>
+                            <div class="card-body not-padding">
+                        <?php require 'preview/hero.php'; ?>
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <!-- Page Heading -->
+                        <h1 class="h3 mb-2 text-gray-800">ภาพโมเมนต์พิเศษ</h1>
+                        <!-- DataTales Example -->
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">รายการ ภาพโมเมนต์พิเศษ</h6>
+                            </div>
                             <div class="card-body">
                                 <div class="table-responsive">
 
@@ -109,6 +122,14 @@ $heros = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูลท
             </div><?php include 'footer.php'; ?>
         </div>
     </div>
+
+</body>
+    
+<script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/datatables/jquery.dataTables.min.js"></script>
@@ -116,6 +137,4 @@ $heros = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูลท
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
-</body>
-
 </html>

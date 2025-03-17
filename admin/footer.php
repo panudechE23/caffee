@@ -66,3 +66,22 @@
       });
     });
   </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const iconScroll = document.querySelector('.i-con-scroll');
+        const tableResponsive = document.querySelector('.table-responsive');
+
+        iconScroll.addEventListener('click', function() {
+            tableResponsive.classList.toggle('d-none');
+            tableResponsive.style.transition = 'transform 1.5s !important';
+            const icon = iconScroll.querySelector('i');
+            if (tableResponsive.classList.contains('d-none')) {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        });
+    });
+</script>
