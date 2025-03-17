@@ -15,6 +15,7 @@ $selectedingredientss = $pageingredientsStmt->fetchAll(PDO::FETCH_COLUMN);
 ?>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.1.0/dist/css/multi-select-tag.css">
+
 <body id="page-top">
 
     <div id="wrapper">
@@ -173,24 +174,24 @@ $selectedingredientss = $pageingredientsStmt->fetchAll(PDO::FETCH_COLUMN);
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
     ...
-<script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.1.0/dist/js/multi-select-tag.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    new MultiSelectTag('ingredients', {
-        rounded: true, // default true
-        shadow: true, // default false
-        placeholder: 'Search...', // default Search...
-        tagColor: {
-            textColor: '#327b2c',
-            borderColor: '#92e681',
-            bgColor: '#eaffe6',
-        },
-        onChange: function(values) {
-            console.log(values);
-        }
-    });
-</script>
-...
+    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.1.0/dist/js/multi-select-tag.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        new MultiSelectTag('ingredients', {
+            rounded: true, // default true
+            shadow: true, // default false
+            placeholder: 'Search...', // default Search...
+            tagColor: {
+                textColor: '#327b2c',
+                borderColor: '#92e681',
+                bgColor: '#eaffe6',
+            },
+            onChange: function(values) {
+                console.log(values);
+            }
+        });
+    </script>
+    ...
 </body>
 
 </html>

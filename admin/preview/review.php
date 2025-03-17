@@ -125,72 +125,29 @@
 
 </style>
 
-
 <!-- Testimonial Start -->
 <div class="container-xxl bg-prime my-6 py-6 pb-0" id="Testimonial">
-
     <div class="container">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
             <p class="text-primary text-uppercase mb-2">Review</p>
             <h1 class="display-6 mb-4">รีวิวจากผู้ดื่มจริง</h1>
         </div>
         <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-            <div class="testimonial-item bg-white rounded p-4">
-                <div class="d-flex align-items-center mb-4">
-                    <img class="flex-shrink-0 rounded-circle border p-1" src="../img/one.png" alt="">
-                    <div class="ms-4">
-                        <h5 class="mb-1">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-                <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos.
-                    Clita erat ipsum et lorem et sit.</p>
-            </div>
+            <?php for ($i = 0; $i < 5; $i++): ?>
             <?php foreach ($reviews as $review): ?>
                 <div class="testimonial-item bg-white rounded p-4">
                     <div class="d-flex align-items-center mb-4">
                         <img class="flex-shrink-0 rounded-circle border p-1" src="../img/review/<?= htmlspecialchars($review['img_review']); ?>" alt="">
                         <div class="ms-4">
-                            <h5 class="mb-1"><?= $review['name_review'] ?></h5>
-                            <span><?= $review['position_review'] ?></span>
+                            <h5 class="mb-1"><?= htmlspecialchars($review['name_review']); ?></h5>
+                            <span><?= htmlspecialchars($review['position_review']); ?></span>
                         </div>
                     </div>
-                    <p class="mb-0"><?= $review['review'] ?></p>
+                    <p class="mb-0"><?= htmlspecialchars($review['review']); ?></p>
                 </div>
             <?php endforeach; ?>
-            <div class="testimonial-item bg-white rounded p-4">
-                <div class="d-flex align-items-center mb-4">
-                    <img class="flex-shrink-0 rounded-circle border p-1" src="../img/one.png" alt="">
-                    <div class="ms-4">
-                        <h5 class="mb-1">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-                <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos.
-                    Clita erat ipsum et lorem et sit.</p>
-            </div>
-            <div class="testimonial-item bg-white rounded p-4">
-                <div class="d-flex align-items-center mb-4">
-                    <img class="flex-shrink-0 rounded-circle border p-1" src="../img/one.png" alt="">
-                    <div class="ms-4">
-                        <h5 class="mb-1">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-                <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos.
-                    Clita erat ipsum et lorem et sit.</p>
-            </div>
-            <div class="testimonial-item bg-white rounded p-4">
-                <div class="d-flex align-items-center mb-4">
-                    <img class="flex-shrink-0 rounded-circle border p-1" src="../img/one.png" alt="">
-                    <div class="ms-4">
-                        <h5 class="mb-1">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-                <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos.
-                    Clita erat ipsum et lorem et sit.</p>
-            </div>
+            <?php endfor; ?>
+            
         </div>
     </div>
 </div>

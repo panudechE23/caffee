@@ -3,7 +3,10 @@
     <div class="container">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
             <p class="text-primary text-uppercase mb-2">HAPPY COFFEE & HAPPY COFFEE GOLD & HAPPY COFFEE MAX</p>
-            <h1 class="display-6 mb-4">สารสกัดจากธรรมชาติมากกว่า 18 ชนิด</h1>
+            <h1 class="display-6 mb-4">สารสกัดจากธรรมชาติมากกว่า 
+            <?= count($selectedingredientss); ?>
+            
+            ชนิด</h1>
         </div>
         <div class="row g-4">
 
