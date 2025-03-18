@@ -70,10 +70,10 @@ $ingredientss = $stmtingredients->fetchAll(PDO::FETCH_ASSOC);
                                         <label for="vdo">รูปสินค้า</label>
                                         <input type="file" class="form-control" id="img1_product" name="img1_product" accept="image/*">
                                         <?php if (isset($product['img1_product']) && !empty($product['img1_product'])): ?>
-                                                <img id="preview_img1" src="../img/product/<?= htmlspecialchars($product['img1_product']); ?>" alt="Preview Image 3" style="width:250px; height:250px; margin-top:10px;">
-                                            <?php else: ?>
+                                            <img id="preview_img1" src="../img/product/<?= htmlspecialchars($product['img1_product']); ?>" alt="Preview Image 3" style="width:250px; height:250px; margin-top:10px;">
+                                        <?php else: ?>
 
-                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="form-group">
                                         <label for="name_product">ชื่อสินค้า</label>
