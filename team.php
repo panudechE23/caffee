@@ -18,12 +18,12 @@ $selectedingredientss = $pageingredientsStmt->fetchAll(PDO::FETCH_COLUMN);
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                 <p class="text-primary text-uppercase mb-2">HAPPY COFFEE & HAPPY COFFEE GOLD & HAPPY COFFEE MAX</p>
-                <h1 class="display-6 mb-4">สารสกัดจากธรรมชาติมากกว่า 18 ชนิด</h1>
+                <h1 class="display-6 mb-4">สารสกัดจากธรรมชาติมากกว่า <?= count($selectedingredientss);?> ชนิด</h1>
             </div>
             <div class="row g-4">
 
 
-            <!-- <?php if (!empty($selectedingredientss)): ?>
+            <?php if (!empty($selectedingredientss)): ?>
                 <?php foreach ($ingredientss as $index => $ingredients): ?>
                     <?php if (in_array($ingredients['id_ingredients'], $selectedingredientss)): ?>
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -39,10 +39,10 @@ $selectedingredientss = $pageingredientsStmt->fetchAll(PDO::FETCH_COLUMN);
                     </div>
                     <?php endif; ?>
                 <?php endforeach; ?>
-            <?php endif; ?> -->
+            <?php endif; ?>
 
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <!-- <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item text-center rounded overflow-hidden">
                         <img class="img-fluid" src="img/logo/1.png" alt="">
                         <div>
@@ -282,7 +282,7 @@ $selectedingredientss = $pageingredientsStmt->fetchAll(PDO::FETCH_COLUMN);
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </div>
