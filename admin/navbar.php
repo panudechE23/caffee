@@ -60,7 +60,7 @@
     <li class="nav-item <?= $current_page == 'page_ingredients.php' ? 'active' : '' ?>">
         <a class="nav-link" href="page_ingredients.php">
             <i class="fas fa-leaf"></i>
-            <span>ส่วนประกอบ</span></a>
+            <span>สารสกัด</span></a>
     </li>
 
     <li class="nav-item <?= $current_page == 'page_review.php' ? 'active' : '' ?>">

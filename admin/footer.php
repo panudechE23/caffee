@@ -66,22 +66,54 @@
       });
     });
   </script>
-<script>
+  <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const iconScroll = document.querySelector('.i-con-scroll');
-        const tableResponsive = document.querySelector('.table-responsive');
+        const iconScrolls = document.querySelectorAll('.i-con-scroll');
 
-        iconScroll.addEventListener('click', function() {
-            tableResponsive.classList.toggle('d-none');
-            tableResponsive.style.transition = 'transform 1.5s !important';
+        iconScrolls.forEach(iconScroll => {
+            // หาส่วนที่ต้องการเปิด/ปิด
+            const card = iconScroll.closest('.card');
+            const tableResponsive = card.querySelector('.sleep1, .sleep2');
+
+            // ตั้งค่าเริ่มต้นให้แสดงเต็มที่
+            tableResponsive.style.height = 'auto';
+            tableResponsive.style.overflow = 'visible';
+            tableResponsive.style.transition = 'height 0.5s ease-in-out';
+
+            // เปลี่ยนไอคอนเป็น "chevron-up" เพื่อให้สื่อว่าปิดได้
             const icon = iconScroll.querySelector('i');
-            if (tableResponsive.classList.contains('d-none')) {
-                icon.classList.remove('fa-chevron-down');
-                icon.classList.add('fa-chevron-up');
-            } else {
-                icon.classList.remove('fa-chevron-up');
-                icon.classList.add('fa-chevron-down');
-            }
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-up');
+
+            iconScroll.addEventListener('click', function() {
+                if (tableResponsive.style.height === 'auto' || tableResponsive.style.height === tableResponsive.scrollHeight + 'px') {
+                    // ปิด (ตั้งค่า height เป็น 0px)
+                    tableResponsive.style.height = tableResponsive.scrollHeight + 'px'; // ตั้งค่าก่อน transition
+                    setTimeout(() => {
+                        tableResponsive.style.height = '0px';
+                        tableResponsive.style.overflow = 'hidden';
+                    }, 10);
+                    
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                } else {
+                    // เปิด (ตั้งค่า height เป็น auto)
+                    tableResponsive.style.height = tableResponsive.scrollHeight + 'px';
+                    tableResponsive.style.overflow = 'visible';
+
+                    setTimeout(() => {
+                        tableResponsive.style.height = 'auto';
+                    }, 500); // ตั้งเป็น auto หลังจาก transition
+                    
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                }
+            });
         });
     });
 </script>
+
+
+
+
+

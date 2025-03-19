@@ -7,10 +7,7 @@ $stmt = $pdo->query($query); // ใช้ตัวแปร $query ที่ก�
 $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูลทั้งหมดในรูปแบบ array
 ?>
 <style>
-    .card-body.not-padding {
-        padding-top: 50px !important;
-        padding-bottom: 50px !important;
-    }
+
 
     @media (min-width: 1400px) {
 
@@ -23,6 +20,7 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูล�
             max-width: 100%;
         }
     }
+
 
 </style>
 
@@ -52,42 +50,49 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูล�
                     <?php endif; ?>
                     <div class="container-fluid">
                         <!-- Page Heading -->
-                        <h1 class="h3 mb-2 text-gray-800">ภาพโมเมนต์พิเศษ</h1>
+                        <h1 class="h3 mb-2 text-gray-800">รีวิวสินค้า</h1>
                         <!-- DataTales Example -->
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">รายการ ภาพโมเมนต์พิเศษ</h6>
-                            </div>
-                            <div class="card-body not-padding">
-                                <?php require 'preview/review.php'; ?>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container-fluid">
-                        <h1 class="h3 mb-2 text-gray-800">ภาพโมเมนต์พิเศษ</h1>
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
                                 <div class="ระยะหาง">
                                     <div class="header-text">
-                                        <h6 class="m-0 font-weight-bold text-primary">รายการ ภาพโมเมนต์พิเศษ</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">ตัวอย่างหน้า รีวิวสินค้า</h6>
                                     </div>
                                     <div class="i-con-scroll">
                                         <i class="fas fa-chevron-down"></i>
                                     </div>
                                 </div>
                             </div>
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <div class="card-body">
-                                            <h6 class="card-title">เพิ่ม รูปภาพ</h6>
+                            <div class="card-body-diss sleep1 not-padding">
+                                <?php require 'preview/review.php'; ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <h1 class="h3 mb-2 text-gray-800">รีวิวสินค้า</h1>
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <div class="ระยะหาง">
+                                    <div class="header-text">
+                                        <h6 class="m-0 font-weight-bold text-primary">รายการ รีวิวสินค้า</h6>
+                                    </div>
+                                    <div class="i-con-scroll">
+                                        <i class="fas fa-chevron-down"></i>                                      
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="card-body-diss sleep2">
+                                    <div class="table-responsive card-body1">
+                                        <div class="card-body ">
+                                            <h6 class="card-title">เพิ่ม รีวิวสินค้า</h6>
                                             <form method="POST" enctype="multipart/form-data" action="add_save/add_list_review.php">
                                                 <div class="form-group">
-                                                    <label for="vdo">Upload img</label>
+                                                    <label for="vdo">รูป รีวิวสินค้า</label>
                                                     <input type="file" class="form-control" id="img_review" name="img_review" accept="image/*" required="ใส่รูปภาพ">
                                                 </div>
                                                 <div class="row">
                                                     <div class="col form-group">
-                                                        <label for="name_review">name</label>
+                                                        <label for="name_review">ชื่อ</label>
                                                         <input type="text" class="form-control" id="name_review" name="name_review" required="ใส่ชื่อ">
                                                     </div>
 
@@ -178,4 +183,4 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูล�
         <script src="js/demo/datatables-demo.js"></script>
 
         </html>
-        
+       

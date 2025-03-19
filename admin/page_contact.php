@@ -29,7 +29,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div id="content">
                 <?php include 'nav.php'; ?>
                 <div class="container-fluid">
-                    <h1 class="h3 mb-4 text-gray-800">แก้ไขข้อมูลการติดต่อ</h1>
+                    <h1 class="h3 mb-4 text-gray-800">ช่องทางการติดต่อ</h1>
                     <?php if (isset($_SESSION['error'])): ?>
                         <div class="alert alert-danger">
                             <?php echo $_SESSION['error'];
@@ -44,7 +44,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <?php endif; ?>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">แก้ไขข้อมูล</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">ตัวอย่างหน้า ช่องทางการติดต่อ</h6>
                         </div>
                         <!-- Footer Start -->
                         <div class="container-fluid text-light footer my-6 mb-0 py-5 wow fadeIn" data-wow-delay="0.1s" id="con">
@@ -96,7 +96,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">แก้ไขข้อมูล</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">แก้ไขข้อมูล ช่องทางการติดต่อ</h6>
                         </div>
                         <div class="card-body">
                             <form method="POST" action="edit_save/contact.php" data-parsley-validate class="form-horizontal form-label-left">

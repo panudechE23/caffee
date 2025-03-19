@@ -35,5 +35,15 @@ require "../db.php";
     .ระยะหาง {
         display: flex;
         justify-content: space-between;
+    }.i-con-scroll i{
+        padding: 5px;
     }
+    .card-body-diss{
+    padding:0px;
+    height: 100%;
+
+}
+/* .card-body-diss  {
+    max-height: 100%!important;
+} */
 </style>

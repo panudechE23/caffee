@@ -40,13 +40,14 @@ $selectedingredientss = $pageingredientsStmt->fetchAll(PDO::FETCH_COLUMN);
                             <?php unset($_SESSION['success']); ?>
                         </div>
                     <?php endif; ?>
+
                     <div class="container-fluid">
                         <!-- Page Heading -->
-                        <h1 class="h3 mb-2 text-gray-800">ภาพโมเมนต์พิเศษ</h1>
+                        <h1 class="h3 mb-2 text-gray-800">สารสกัด</h1>
                         <!-- DataTales Example -->
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">รายการ ภาพโมเมนต์พิเศษ</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">ตัวอย่างหน้า สารสกัด</h6>
                             </div>
                             <div class="card-body not-padding">
                                 <?php require 'preview/ingredients.php'; ?>
@@ -56,11 +57,11 @@ $selectedingredientss = $pageingredientsStmt->fetchAll(PDO::FETCH_COLUMN);
 
                     <div class="container-fluid">
                         <!-- Page Heading -->
-                        <h1 class="h3 mb-2 text-gray-800">ภาพโมเมนต์พิเศษ</h1>
+                        <h1 class="h3 mb-2 text-gray-800">สารสกัด</h1>
                         <!-- DataTales Example -->
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">รายการ ภาพโมเมนต์พิเศษ</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">รายการ สารสกัด</h6>
                             </div>
                             <div class="card-body not-padding">
                                 <form action="save_page_ingredients.php" method="POST" enctype="multipart/form-data">
@@ -82,11 +83,11 @@ $selectedingredientss = $pageingredientsStmt->fetchAll(PDO::FETCH_COLUMN);
 
                     <div class="container-fluid">
                         <!-- Page Heading -->
-                        <h1 class="h3 mb-2 text-gray-800">ส่วนประกอบ</h1>
+                        <h1 class="h3 mb-2 text-gray-800">สารสกัด</h1>
                         <!-- DataTales Example -->
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">รายการ ส่วนประกอบ</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">รายการ สารสกัด</h6>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -107,7 +108,6 @@ $selectedingredientss = $pageingredientsStmt->fetchAll(PDO::FETCH_COLUMN);
                                                 <label for="detail_ingredients">รายละเอียด</label>
                                                 <input type="text" class="form-control" id="detail_ingredients" name="detail_ingredients" required="ใส่ตำแหน่ง">
                                             </div>
-
 
                                             <button type="submit" class="btn btn-primary mt-3">บันทึก</button>
                                         </form>
@@ -165,33 +165,38 @@ $selectedingredientss = $pageingredientsStmt->fetchAll(PDO::FETCH_COLUMN);
                 </div>
             </div><?php include 'footer.php'; ?>
         </div>
-    </div>
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
-    ...
-    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.1.0/dist/js/multi-select-tag.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        new MultiSelectTag('ingredients', {
-            rounded: true, // default true
-            shadow: true, // default false
-            placeholder: 'Search...', // default Search...
-            tagColor: {
-                textColor: '#327b2c',
-                borderColor: '#92e681',
-                bgColor: '#eaffe6',
-            },
-            onChange: function(values) {
-                console.log(values);
-            }
-        });
-    </script>
-    ...
+
 </body>
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="js/demo/datatables-demo.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.1.0/dist/js/multi-select-tag.js"></script>
+<script>
+    new MultiSelectTag('ingredients', {
+        rounded: true, // default true
+        shadow: true, // default false
+        placeholder: 'Search...', // default Search...
+        tagColor: {
+            textColor: '#327b2c',
+            borderColor: '#92e681',
+            bgColor: '#eaffe6',
+        },
+        onChange: function(values) {
+            console.log(values);
+        }
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#dataTable').DataTable();
+    });
+</script>
+
 
 </html>

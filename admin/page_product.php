@@ -7,17 +7,17 @@ $stmt = $pdo->query($query); // ใช้ตัวแปร $query ที่ก�
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูลทั้งหมดในรูปแบบ array
 ?>
 <style>
-    .limit-text{
+    .limit-text {
         overflow: hidden;
-   display: -webkit-box;
-   -webkit-line-clamp: 2; /* number of lines to show */
-           line-clamp: 2; 
-   -webkit-box-orient: vertical;
-       
-    }
-    
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        /* number of lines to show */
+        line-clamp: 1;
+        -webkit-box-orient: vertical;
 
+    }
 </style>
+
 <body id="page-top">
 
     <div id="wrapper">
@@ -47,19 +47,32 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูล
                         <h1 class="h3 mb-2 text-gray-800">สินค้า</h1>
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">รายการ สินค้า</h6>
+                                <div class="ระยะหาง">
+                                    <div class="header-text">
+                                        <h6 class="m-0 font-weight-bold text-primary">ตัวอย่างหน้า สินค้า</h6>
+                                    </div>
+                                    <div class="i-con-scroll">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-bodys">
-                           
-                            <?php include 'preview/product.php'; ?> </div>
+                            <div class="card-body-diss sleep1">
+                                <?php include 'preview/product.php'; ?> </div>
                         </div>
 
                         <!-- DataTales Example -->
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">รายการ สินค้า</h6>
+                                <div class="ระยะหาง">
+                                    <div class="header-text">
+                                    <h6 class="m-0 font-weight-bold text-primary">รายการ สินค้า</h6>
+                                    </div>
+                                    <div class="i-con-scroll">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body-diss sleep2">
                                 <div class="table-responsive">
 
                                     <div class="card-body">
