@@ -58,7 +58,7 @@
                  <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                      <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
                          <div class="text-center p-4">
-                             <div class="d-inline-block border border-primary rounded-pill pt-1 px-3 mb-3">฿ 650.00
+                             <div class="d-inline-block border border-primary rounded-pill pt-1 px-3 mb-3">฿  <?php echo $product['price_product']; ?> 
                              </div>
                              <a class="d-inline-block border border-primary rounded-pill px-3 mb-3 text-colorss" href="https://liff.line.me/2004905932-ZvVLn72n">สั่งซื้อผลิตภัณฑ์</a>
 

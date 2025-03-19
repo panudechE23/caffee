@@ -1,4 +1,15 @@
 
+ <style>
+    .limit-text {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }  
+    ul.row.g-2.mb-4 {
+    list-style: none;
+}
+</style>
  <!-- Product Start -->
  <div class="container-xxl bg-light my-6 py-6 pt-0" id="Product">
         <div class="container">
@@ -38,7 +49,9 @@
                          <div class="position-relative mt-auto">
                              <img class="img-fluid" src="img/product/<?= htmlspecialchars($product['img1_product']); ?>" alt="">
                              <div class="product-overlay">
-                                 <a class="btn btn-lg-square btn-outline-light rounded-circle" href="productdetails.php"><i
+                                 <a class="btn btn-lg-square btn-outline-light rounded-circle" 
+                                 href="productdetailss.php?id=<?= $product['id_product']; ?>"
+                                 ><i
                                          class="fa fa-eye text-primary"></i></a>
                              </div>
                          </div>

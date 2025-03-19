@@ -15,7 +15,7 @@
                                     <div class="col-lg-3 col-md-6">
                                         <h4 class="text-light mb-4">ผลิตภัณฑ์</h4>
                                         <?php foreach ($products as $product) : ?>
-                                            <a class="btn btn-link" href="productdetails.php?id_product=<?php echo $product['id_product']; ?>"><?php echo $product['name_product']; ?></a>
+                                            <a class="btn btn-link" href="productdetailss.php?id_product=<?php echo $product['id_product']; ?>"><?php echo $product['name_product']; ?></a>
                                         <?php endforeach; ?>
                                     </div>
                                     <div class="col-lg-3 col-md-6">

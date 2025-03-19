@@ -236,41 +236,61 @@ $ingredientss = $stmtingredients->fetchAll(PDO::FETCH_ASSOC);
         })
     </script>
     <script>
-        tinymce.init({
-            selector: 'textarea#detail',
-            plugins: 'advlist autolink lists link image charmap print preview anchor code fullscreen insertdatetime media table paste code help wordcount',
-            toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | image | fullscreen preview | code',
-            menubar: 'file edit view insert format tools table help',
-            height: 300,
-            branding: false,
-            automatic_uploads: true,
-            file_picker_types: 'image',
-            paste_data_images: true,
-            images_file_types: 'jpg,svg,webp',
-            image_title: true,
-            file_picker_callback: (cb, value, meta) => {
-                const input = document.createElement('input');
-                input.setAttribute('type', 'file');
-                input.setAttribute('accept', 'img/*');
-                input.addEventListener('change', (e) => {
-                    const file = e.target.files[0];
-                    const reader = new FileReader();
-                    reader.addEventListener('load', () => {
-                        const id = 'blobid' + (new Date()).getTime();
-                        const blobCache = tinymce.activeEditor.editorUpload.blobCache;
-                        const base64 = reader.result.split(',')[1];
-                        const blobInfo = blobCache.create(id, file, base64);
-                        blobCache.add(blobInfo);
-                        cb(blobInfo.blobUri(), {
-                            title: file.name
-                        });
-                    });
-                    reader.readAsDataURL(file);
+      tinymce.init({
+    selector: 'textarea#detail',
+    plugins: 'advlist autolink lists link image charmap print preview anchor code fullscreen insertdatetime media table paste code help wordcount',
+    toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | image | fullscreen preview | code',
+    menubar: 'file edit view insert format tools table help',
+    height: 300,
+    branding: false,
+    automatic_uploads: true,
+    file_picker_types: 'image',
+    paste_data_images: true,
+    images_file_types: 'jpg,svg,webp',
+    image_title: true,
+    valid_elements: '*[*]',  // อนุญาตให้ใช้ทุกแท็กและแอตทริบิวต์
+    extended_valid_elements: 'i[class|style]',  // อนุญาตแท็ก <i> และกำหนด class หรือ style
+
+    file_picker_callback: (cb, value, meta) => {
+        const input = document.createElement('input');
+        input.setAttribute('type', 'file');
+        input.setAttribute('accept', 'img/*');
+        input.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+            reader.addEventListener('load', () => {
+                const id = 'blobid' + (new Date()).getTime();
+                const blobCache = tinymce.activeEditor.editorUpload.blobCache;
+                const base64 = reader.result.split(',')[1];
+                const blobInfo = blobCache.create(id, file, base64);
+                blobCache.add(blobInfo);
+                cb(blobInfo.blobUri(), {
+                    title: file.name
                 });
-                input.click();
-            },
-            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+            });
+            reader.readAsDataURL(file);
         });
+        input.click();
+    },
+    setup: function(editor) {
+        editor.on('PreProcess', function(e) {
+            let lists = e.node.querySelectorAll('ul, ol');
+            lists.forEach(list => {
+                list.classList.add('row', 'g-2', 'mb-4'); // เพิ่ม class ให้ <ul> และ <ol>
+                list.querySelectorAll('li').forEach(li => {
+                    li.classList.add('col-sm-6'); // เพิ่ม class ให้ <li>
+                    
+                    // ตรวจสอบว่ามีไอคอนหรือไม่ ถ้ายังไม่มีให้เพิ่ม
+                    if (!li.querySelector('i')) {
+                        li.innerHTML = `<i class="fa fa-check text-primary me-2"></i> ` + li.innerHTML;
+                    }
+                });
+            });
+        });
+    },
+    content_style: 'ul.row.g-2.mb-4 { padding: 0; } li.col-sm-6 { list-style: none; margin-bottom: 10px; }'
+});
+
     </script>
     <script>
         document.getElementById('add_row').addEventListener('click', function() {

@@ -23,18 +23,16 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูล
      </button>
      <div class="collapse navbar-collapse" id="navbarCollapse">
          <div class="navbar-nav mx-auto p-4 p-lg-0">
-             <a href="index.php" class="nav-item nav-link active">หน้าแรก</a>
-             <a href="index.php#about" class="nav-item nav-link">เกี่ยวกับเรา</a>
-             <a href="index.php#Testimonial" class="nav-item nav-link">รีวิว</a>
+            <a href="index.php" class="nav-item nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : ''; ?>">หน้าแรก</a>
+            <a href="index.php#about" class="nav-item nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'index.php#about' ? 'active' : ''; ?>">เกี่ยวกับเรา</a>
+            <a href="index.php#Testimonial" class="nav-item nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'index.php#Testimonial' ? 'active' : ''; ?>">รีวิว</a>
              <div class="nav-item dropdown">
                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">ผลิตภัณฑ์</a>
                  <div class="dropdown-menu m-0">
                      <?php foreach ($products as $product) : ?>
                          <a class="dropdown-item" href="productdetails.php?id_product=<?php echo $product['id_product']; ?>"><?php echo $product['name_product']; ?></a>
                      <?php endforeach; ?>
-                     <a href="productdetails.php" class="dropdown-item">HAPPY COFFEE</a>
-                     <a href="productdetails.php" class="dropdown-item">HAPPY COFFEE GOLD</a>
-                     <a href="productdetails.php" class="dropdown-item">HAPPY COFFEE MAX</a>
+                     
                  </div>
              </div>
          </div>

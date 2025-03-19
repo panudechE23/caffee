@@ -1,5 +1,10 @@
 <style>
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav {
 
+        background: none !important;
+    }
+}
 
     </style>
 

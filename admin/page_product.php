@@ -6,7 +6,18 @@ $query = "SELECT * FROM product";
 $stmt = $pdo->query($query); // ใช้ตัวแปร $query ที่กำหนดไว้ด้านบน
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูลทั้งหมดในรูปแบบ array
 ?>
+<style>
+    .limit-text{
+        overflow: hidden;
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* number of lines to show */
+           line-clamp: 2; 
+   -webkit-box-orient: vertical;
+       
+    }
+    
 
+</style>
 <body id="page-top">
 
     <div id="wrapper">
@@ -81,7 +92,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูล
                                                                 <img src="../img/product/<?= htmlspecialchars($product['img1_product']); ?>" alt="Review Image" class="img-fluid mt-2" style="width: 100px; height: auto;">
                                                             </td>
                                                             <td><?= $product['name_product']; ?></td>
-                                                            <td><?= $product['detail1_product']; ?></td>
+                                                            <td class="limit-text"><?= $product['detail1_product']; ?></td>
 
                                                             <td>
                                                                 <a href="add_product.php?id=<?= $product['id_product']; ?>" class="btn btn-warning btn-sm">
