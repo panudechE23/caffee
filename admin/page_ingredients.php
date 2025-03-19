@@ -47,10 +47,20 @@ $selectedingredientss = $pageingredientsStmt->fetchAll(PDO::FETCH_COLUMN);
                         <!-- DataTales Example -->
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">ตัวอย่างหน้า สารสกัด</h6>
+                                <div class="ระยะหาง">
+                                    <div class="header-text">
+                                        <h6 class="m-0 font-weight-bold text-primary">ตัวอย่างหน้า สารสกัด</h6>
+                                    </div>
+                                    <div class="i-con-scroll">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                               
                             </div>
+                            <div class="sleep1">
                             <div class="card-body not-padding">
                                 <?php require 'preview/ingredients.php'; ?>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -61,8 +71,16 @@ $selectedingredientss = $pageingredientsStmt->fetchAll(PDO::FETCH_COLUMN);
                         <!-- DataTales Example -->
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">รายการ สารสกัด</h6>
+                                <div class="ระยะหาง">
+                                    <div class="header-text">
+                                        <h6 class="m-0 font-weight-bold text-primary">รายการ สารสกัด</h6>
+                                    </div>
+                                    <div class="i-con-scroll">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
                             </div>
+                            <div class ="sleep2">
                             <div class="card-body not-padding">
                                 <form action="save_page_ingredients.php" method="POST" enctype="multipart/form-data">
                                     <div class="form-group">
@@ -78,6 +96,7 @@ $selectedingredientss = $pageingredientsStmt->fetchAll(PDO::FETCH_COLUMN);
                                     <button type="submit" class="btn btn-primary mt-3">บันทึก</button>
                                 </form>
                             </div>
+                            </div>
                         </div>
                     </div>
 
@@ -87,8 +106,17 @@ $selectedingredientss = $pageingredientsStmt->fetchAll(PDO::FETCH_COLUMN);
                         <!-- DataTales Example -->
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">รายการ สารสกัด</h6>
+                                <div class="ระยะหาง">
+                                    <div class="header-text">
+                                        <h6 class="m-0 font-weight-bold text-primary">รายการ สารสกัด</h6>
+                                    </div>
+                                    <div class="i-con-scroll">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                             
                             </div>
+                            <div class="sleep3">
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <div class="card-body">
@@ -160,7 +188,7 @@ $selectedingredientss = $pageingredientsStmt->fetchAll(PDO::FETCH_COLUMN);
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div></div>
                     </div>
                 </div>
             </div><?php include 'footer.php'; ?>

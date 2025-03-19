@@ -73,7 +73,7 @@
         iconScrolls.forEach(iconScroll => {
             // หาส่วนที่ต้องการเปิด/ปิด
             const card = iconScroll.closest('.card');
-            const tableResponsive = card.querySelector('.sleep1, .sleep2');
+            const tableResponsive = card.querySelector('.sleep1, .sleep2, .sleep3');
 
             // ตั้งค่าเริ่มต้นให้แสดงเต็มที่
             tableResponsive.style.height = 'auto';

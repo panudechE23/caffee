@@ -63,8 +63,10 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูล�
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body-diss sleep1 not-padding">
+                            <div class="sleep1">
+                            <div class="card-body-diss not-padding">
                                 <?php require 'preview/review.php'; ?>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -81,6 +83,7 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูล�
                                     </div>
                                 </div>
                             </div>
+                          
                                 <div class="card-body-diss sleep2">
                                     <div class="table-responsive card-body1">
                                         <div class="card-body ">
@@ -155,6 +158,7 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูล�
                                                     </tbody>
 
                                                 </table>
+
                                             </div>
                                         </div>
                                     </div>

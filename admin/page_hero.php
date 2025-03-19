@@ -37,11 +37,21 @@ $heros = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูลท
                         <!-- DataTales Example -->
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">ตัวอย่าง หน้าแรก</h6>
+                                <div class="ระยะหาง">
+                                    <div class="header-text">
+                                        <h6 class="m-0 font-weight-bold text-primary">ตัวอย่าง หน้าแรก</h6>
+                                    </div>
+                                    <div class="i-con-scroll">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+
                             </div>
-                            <div class="card-body not-padding">
-                        <?php require 'preview/hero.php'; ?>
-                            </div>    
+                            <div class="sleep1">
+                                <div class="card-body not-padding">
+                                    <?php require 'preview/hero.php'; ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="container-fluid">
@@ -50,8 +60,17 @@ $heros = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูลท
                         <!-- DataTales Example -->
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">รายการ หน้าแรก</h6>
+                                <div class="ระยะหาง">
+                                    <div class="header-text">
+                                        <h6 class="m-0 font-weight-bold text-primary">รายการ หน้าแรก</h6>
+                                    </div>
+                                    <div class="i-con-scroll">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                                
                             </div>
+                            <div class="sleep2">
                             <div class="card-body">
                                 <div class="table-responsive">
 
@@ -117,6 +136,7 @@ $heros = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูลท
                                 </div>
                             </div>
                         </div>
+                        </div>
                     </div>
                 </div>
             </div><?php include 'footer.php'; ?>
@@ -124,17 +144,18 @@ $heros = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูลท
     </div>
 
 </body>
-    
-<script src="../lib/wow/wow.min.js"></script>
-    <script src="../lib/counterup/counterup.min.js"></script>
-    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
-    <!-- Template Javascript -->
-    <script src="../js/main.js"></script>
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
+<script src="../lib/wow/wow.min.js"></script>
+<script src="../lib/counterup/counterup.min.js"></script>
+<script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+<!-- Template Javascript -->
+<script src="../js/main.js"></script>
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="js/demo/datatables-demo.js"></script>
+
 </html>

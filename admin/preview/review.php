@@ -129,6 +129,7 @@
 <div class="container-xxl bg-prime my-6 py-6 pb-0" id="Testimonial">
     <div class="container">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <br>
             <p class="text-primary text-uppercase mb-2">Review</p>
             <h1 class="display-6 mb-4">รีวิวจากผู้ดื่มจริง</h1>
         </div>
@@ -145,10 +146,11 @@
                     </div>
                     <p class="mb-0"><?= htmlspecialchars($review['review']); ?></p>
                 </div>
+                
             <?php endforeach; ?>
             <?php endfor; ?>
-            
-        </div>
+          
+        </div>  <br>
     </div>
 </div>
 
