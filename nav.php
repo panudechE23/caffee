@@ -1,16 +1,11 @@
  <!-- Navbar Start -->
  <!-- Footer Start -->
- <?php
-
-    $stmt = $pdo->prepare("SELECT * FROM contact WHERE id_contact = 1");
-    $stmt->execute();
-    $contact = $stmt->fetch(PDO::FETCH_ASSOC);
-
-$query = "SELECT * FROM product";
-$stmt = $pdo->query($query); // ใช้ตัวแปร $query ที่กำหนดไว้ด้านบน
-$products = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูลทั้งหมดในรูปแบบ array
-
-    ?>
+<?php
+// ✅ ดึงข้อมูลสินค้าทั้งหมด (ใช้ใน nav.php)
+$sqlAllProducts = "SELECT id_product, name_product FROM product";
+$stmtAllProducts = $pdo->query($sqlAllProducts);
+$all_products = $stmtAllProducts->fetchAll(PDO::FETCH_ASSOC);
+?>
 
 
 
@@ -29,22 +24,13 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC); // เก็บข้อมูล
              <div class="nav-item dropdown">
                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">ผลิตภัณฑ์</a>
                  <div class="dropdown-menu m-0">
-                     <?php foreach ($products as $product) : ?>
-                         <a class="dropdown-item" href="productdetails.php?id_product=<?php echo $product['id_product']; ?>"><?php echo $product['name_product']; ?></a>
+                 <?php foreach ($all_products as $productItem): ?>
+                         <a class="dropdown-item" href="productdetails.php?id=<?= $productItem['id_product']; ?>"><?= $productItem['name_product']; ?></a>
                      <?php endforeach; ?>
                      
                  </div>
              </div>
          </div>
-         <!-- <div class=" d-none d-lg-flex">
-                <div class="flex-shrink-0 btn-lg-square border border-light rounded-circle">
-                    <i class="fa fa-phone text-primary"></i>
-                </div>
-                <div class="ps-3">
-                    <small class="text-primary mb-0">โทรหาเรา</small>
-                    <p class="text-light fs-5 mb-0">02-642-5425</p>
-                </div>
-            </div> -->
+         
      </div>
  </nav>
- <!-- Navbar End -->

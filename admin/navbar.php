@@ -38,24 +38,11 @@
     </li>
 
     <!-- Nav Item - Dashboard -->
-    <!-- <li class="nav-item <?= $current_page == 'page_nutrition.php' ? 'active' : '' ?>">
-    <a class="nav-link" href="page_nutrition.php">
-        <i class="fas fa-apple-alt"></i>
-        <span>โภชนาการ</span></a>
-</li> -->
-
-    <!-- Nav Item - Dashboard -->
     <li class="nav-item <?= $current_page == 'page_product.php' ? 'active' : '' ?>">
         <a class="nav-link" href="page_product.php">
             <i class="fas fa-box"></i>
             <span>รายการสินค้า</span></a>
     </li>
-
-    <!-- <li class="nav-item <?= $current_page == 'page_satisfaction.php' ? 'active' : '' ?>">
-    <a class="nav-link" href="page_satisfaction.php">                                                        
-        <i class="fas fa-smile"></i>
-        <span>ความพึงพอใจ</span></a>
-</li> -->
 
     <li class="nav-item <?= $current_page == 'page_ingredients.php' ? 'active' : '' ?>">
         <a class="nav-link" href="page_ingredients.php">

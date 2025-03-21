@@ -1,5 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+// เชื่อมต่อฐานข้อมูล
+include('db.php');
+
+$product = null;
+$selectedingredientss = [];
+$all_products = [];
+
+
+// ตรวจสอบว่ามีการส่ง ID มาหรือไม่ (ใช้สำหรับแสดงรายละเอียด)
+if (isset($_GET['id'])) {
+    $product_id = $_GET['id'];
+
+    // ดึงข้อมูลสินค้าเฉพาะ ID ที่เลือก
+    $query = "SELECT * FROM product WHERE id_product = ?";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute([$product_id]);
+    $product = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    // ตรวจสอบว่ามีสินค้าอยู่จริงหรือไม่
+    if (!$product) {
+        echo 'ID สินค้าไม่ถูกต้อง';
+        exit;
+    }
+
+    // ดึงข้อมูล ingredients ที่เชื่อมโยงกับสินค้า
+    $sqlProductingredients = "SELECT id_ingredients FROM product_ingredients WHERE id_product = ?";
+    $stmtProductingredients = $pdo->prepare($sqlProductingredients);
+    $stmtProductingredients->execute([$product_id]);
+    $selectedingredientss = $stmtProductingredients->fetchAll(PDO::FETCH_COLUMN);
+}
+
+// ดึงข้อมูลวัตถุดิบทั้งหมด
+$sqlingredients = "SELECT * FROM ingredients";
+$stmtingredients = $pdo->prepare($sqlingredients);
+$stmtingredients->execute();
+$ingredientss = $stmtingredients->fetchAll(PDO::FETCH_ASSOC);
+
+
+?>
 
 <?php include('head.php'); ?>
 <?php include('db.php'); ?>
@@ -14,48 +54,8 @@
 <body>
     <?php include('spinner.php'); ?>
     <?php include('nav.php'); ?>
-    <?php
-
-    // เชื่อมต่อฐานข้อมูล
-
-    $product = null;
-    $selectedingredientss = [];
-
-    // ตรวจสอบว่ามีการส่ง ID มาหรือไม่ (ใช้สำหรับแก้ไข)
-    if (isset($_GET['id'])) {
-        $product_id = $_GET['id'];
-
-        try {
-            // ดึงข้อมูลสินค้า
-            $query = "SELECT * FROM product WHERE id_product = ?";
-            $stmt = $pdo->prepare($query);
-            $stmt->execute([$product_id]);
-            $product = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            var_dump($product); // ตรวจสอบข้อมูลสินค้าที่ได้จากฐานข้อมูล
-
-            if (!$product) {
-                die('ID สินค้าไม่ถูกต้อง');
-            }
-        } catch (PDOException $e) {
-            die("Error: " . $e->getMessage());
-        }
 
 
-        // ดึงข้อมูล ingredients ที่เชื่อมโยงกับสินค้า
-        $sqlProductingredients = "SELECT id_ingredients FROM product_ingredients WHERE id_product = ?";
-        $stmtProductingredients = $pdo->prepare($sqlProductingredients);
-        $stmtProductingredients->execute([$product_id]);
-        $selectedingredientss = $stmtProductingredients->fetchAll(PDO::FETCH_COLUMN);
-    }
-
-    // ดึงข้อมูลวัตถุดิบทั้งหมด
-    $sqlingredients = "SELECT * FROM ingredients";
-    $stmtingredients = $pdo->prepare($sqlingredients);
-    $stmtingredients->execute();
-    $ingredientss = $stmtingredients->fetchAll(PDO::FETCH_ASSOC);
-
-    ?>
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-6 wow fadeIn" data-wow-delay="0.1s">
         <div class="container text-center pt-5 pb-3">
@@ -104,65 +104,57 @@
             </div>
             <div class="row g-4">
                 <?php foreach ($ingredientss as $ingredients) : ?>
-                    <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-item text-center rounded overflow-hidden">
-                            <img class="img-fluid" src="img/ingredients/<?= $ingredients['img_ingredients']; ?>" alt="" style="max-width: 50%;height: 50%;">
-                            <div>
+                    <?php if (in_array($ingredients['id_ingredients'], $selectedingredientss)) : ?>
+                        <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="team-item text-center rounded overflow-hidden">
+                                <img class="img-fluid" src="img/ingredients/<?php echo $ingredients['img_ingredients']; ?>" alt="" style="max-width: 50%;height: 50%;">
                                 <div>
-                                    <h5><?= $ingredients['name_ingredients']; ?></h5>
-                                    <span><?= $ingredients['detail_ingredients']; ?></span>
+                                    <div>
+                                        <h5><?php echo $ingredients['name_ingredients']; ?></h5>
+                                        <span><?php echo $ingredients['detail_ingredients']; ?></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <?php endif; ?>
                 <?php endforeach; ?>
-                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item text-center rounded overflow-hidden">
-                        <img class="img-fluid" src="img/logo/12.png" alt="" style="max-width: 50%;height: 50%;">
-                        <div>
-                            <div>
-                                <h5>คอลลาเจน</h5>
-                                <span> เสริมสร้างความกระจ่างใส & ช่วยฟื้นฟูดูแลสุขภาพผิวให้กระชับ เรียบเนียน
-                                    ลดการเสื่อมสภาพของข้อต่อ เพิ่มความแข็งแรงให้กับกระดูกและข้อ</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
     <!-- Team End -->
 
     <?php
-// ตรวจสอบว่ามีข้อมูลและสามารถแปลงเป็นอาร์เรย์ได้
-$com_product_array = isset($product['com_product']) ? json_decode($product['com_product'], true) : [];
-$amount_product_array = isset($product['amount_product']) ? json_decode($product['amount_product'], true) : [];
+    // ตรวจสอบว่ามีข้อมูลและสามารถแปลงเป็นอาร์เรย์ได้
+    $com_product_array = isset($product['com_product']) ? json_decode($product['com_product'], true) : [];
+    $amount_product_array = isset($product['amount_product']) ? json_decode($product['amount_product'], true) : [];
 
-// ตรวจสอบว่าการแปลง JSON สำเร็จหรือไม่
-if (json_last_error() !== JSON_ERROR_NONE) {
-    echo "<p class='text-danger text-center'>เกิดข้อผิดพลาดในการอ่านข้อมูล</p>";
-    return;
-}
+    // ตรวจสอบว่าการแปลง JSON สำเร็จหรือไม่
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        echo "<p class='text-danger text-center'>เกิดข้อผิดพลาดในการอ่านข้อมูล</p>";
+        return;
+    }
 
-// ตรวจสอบว่าอาร์เรย์มีข้อมูลและมีขนาดเท่ากัน
-if (!empty($com_product_array) && !empty($amount_product_array) && count($com_product_array) === count($amount_product_array)): ?>
-    <div class="container">
-        <h2 class="text-center">• ส่วนประกอบที่สำคัญใน 1 ซอง •</h2>
-        <table class="table table-striped table-bordered">
-            <tbody>
-                <?php foreach ($com_product_array as $index => $com_product): ?>
-                    <tr>
-                        <td><?= htmlspecialchars($com_product) ?></td>
-                        <td><?= isset($amount_product_array[$index]) ? htmlspecialchars($amount_product_array[$index]) . '%' : '-' ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
-<?php else: ?>
-    <p class="text-warning text-center">ไม่มีข้อมูลส่วนประกอบที่สำคัญ</p>
-<?php endif; ?>
-
+    // ตรวจสอบว่าอาร์เรย์มีข้อมูลและมีขนาดเท่ากัน
+    if (!empty($com_product_array)  && count($com_product_array) === count($amount_product_array)): ?>
+        <div class="container">
+            <h2 class="text-center">• ส่วนประกอบที่สำคัญใน 1 ซอง •</h2>
+            <table class="table table-striped table-bordered">
+                <tbody>
+                    <?php foreach ($com_product_array as $index => $com_product): ?>
+                        <?php if (!empty($com_product)): ?>
+                            <tr>
+                                <td><?= htmlspecialchars($com_product) ?></td>
+                                <td><?= isset($amount_product_array[$index]) ? htmlspecialchars($amount_product_array[$index]) . '%' : '-' ?></td>
+                            </tr>
+                        <?php endif; ?>
+                        <p class="text-warning text-center">ไม่มีข้อมูลส่วนประกอบที่สำคัญ</p>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    <?php else: ?>
+        <p class="text-warning text-center">ไม่มีข้อมูลส่วนประกอบที่สำคัญ</p>
+    <?php endif; ?>
 
     <!-- เรียกใช้ Bootstrap JavaScript -->
 
@@ -228,6 +220,10 @@ if (!empty($com_product_array) && !empty($amount_product_array) && count($com_pr
     <?php include('script.php'); ?>
     <script>
         console.log("Product ID: <?= htmlspecialchars($product['id_product']); ?>");
+        document.addEventListener("DOMContentLoaded", function() {
+            const ingredients = <?= json_encode($ingredientss); ?>;
+            console.log("Ingredients:", ingredients);
+        });
     </script>
 </body>
 
